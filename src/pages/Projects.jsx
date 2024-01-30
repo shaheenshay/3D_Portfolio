@@ -3,13 +3,22 @@ import { Link } from "react-router-dom";
 import CTA from "../components/CTA";
 import { projects } from '../constants/index'
 import { arrow } from "../assets/icons";
+import  herobg1  from "../assets/images/herobg1.png";
 
 const Projects = () => {
+  const backgroundStyle = {
+    backgroundImage: `url(${herobg1})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+  };
+
   return (
+   <div style={backgroundStyle}>
     <section className='max-container'>
-       <h1 className='head-text'>
+       <h1 className='head-text text-slate-400'>
         My{" "}
-        <span className='blue-gradient_text drop-shadow font-semibold'>
+        <span className='purple-gradient_text drop-shadow font-semibold'>
           Projects
         </span>
       </h1>
@@ -37,7 +46,7 @@ const Projects = () => {
             </div>
 
             <div className='mt-5 flex flex-col'>
-              <h4 className='text-2xl font-poppins font-semibold'>
+              <h4 className='text-slate-400 text-2xl font-poppins font-semibold'>
                 {project.name}
               </h4>
               <p className='mt-2 text-slate-500'>{project.description}</p>
@@ -65,6 +74,7 @@ const Projects = () => {
 
       <CTA />
     </section>
+   </div> 
   );
 };
 

@@ -5,15 +5,24 @@ import {
 
 import CTA  from "../components/CTA";
 import { experiences, skills } from "../constants";
+import  herobg1  from "../assets/images/herobg1.png";
 
 import "react-vertical-timeline-component/style.min.css";
 
 const About = () => {
+  const backgroundStyle = {
+    backgroundImage: `url(${herobg1})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+  };
+
   return (
+   <div style={backgroundStyle}> 
     <section className='max-container'>
-      <h1 className='head-text'>
+      <h1 className='head-text text-slate-400'>
         Hello, I'm{" "}
-        <span className='blue-gradient_text font-semibold drop-shadow'>
+        <span className='purple-gradient_text font-semibold drop-shadow'>
           {" "}
           Shaheen Ahad
         </span>{" "}
@@ -28,7 +37,7 @@ const About = () => {
       </div>
 
       <div className='py-10 flex flex-col'>
-        <h3 className='subhead-text'>My Skills</h3>
+        <h3 className='subhead-text text-slate-400'>My Skills</h3>
 
         <div className='mt-16 flex flex-wrap gap-12'>
           {skills.map((skill) => (
@@ -47,7 +56,7 @@ const About = () => {
       </div>
 
       <div className='py-16'>
-        <h3 className='subhead-text'>Work Experience.</h3>
+        <h3 className='subhead-text text-slate-400'>Work Experience.</h3>
         <div className='mt-5 flex flex-col gap-3 text-slate-500'>
           <p>
             I've worked with all sorts of techstack, leveling up my skills and
@@ -67,7 +76,7 @@ const About = () => {
                     <img
                       src={experience.icon}
                       alt={experience.company_name}
-                      className='w-[60%] h-[60%] object-contain'
+                      className='w-[85%] h-[85%] object-contain'
                     />
                   </div>
                 }
@@ -83,8 +92,8 @@ const About = () => {
                     {experience.title}
                   </h3>
                   <p
-                    className='text-black-500 font-medium text-base'
-                    style={{ margin: 0 }}
+                    className='text-black-700 font-medium text-base'
+                    style={{ margin: 1 }}
                   >
                     {experience.company_name}
                   </p>
@@ -94,7 +103,7 @@ const About = () => {
                   {experience.points.map((point, index) => (
                     <li
                       key={`experience-point-${index}`}
-                      className='text-black-500/50 font-normal pl-1 text-sm'
+                      className='text-black-500/95 font-normal pl-1 text-sm'
                     >
                       {point}
                     </li>
@@ -110,6 +119,7 @@ const About = () => {
 
       <CTA />
     </section>
+  </div>  
   );
 };
 
